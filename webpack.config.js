@@ -1,20 +1,28 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const { web } = require("webpack");
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
   devServer: {
-    allowedHosts: "all",
     static: './dist',
-    // watchFiles: ["./src/template.html"]
+    hot: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      }, {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+    ]
   },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/dist/",
     clean: true,
   },
   plugins: [
@@ -23,5 +31,5 @@ module.exports = {
       favicon: '',
     }),
   ],
- 
+
 };
