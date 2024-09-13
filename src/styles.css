@@ -3,6 +3,7 @@
 :root {
     box-sizing: border-box;
     font-family: "Luckiest Guy", 'Times New Roman', Times, serif;
+    --bubba-red: rgb(200, 0, 0);
 }
 
 body,
@@ -22,15 +23,25 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: center;
+     gap: 4rem;
     margin: 1rem;
+    text-align: center;
+}
+
+footer {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--bubba-red);
 }
 
 .navButton {
     background-color: white;
     border: none;
-    color: rgb(201, 0, 0);
+    color: var(--bubba-red);
     font-weight: bold;
     padding: 5px 15px;
     font-family: inherit;
@@ -48,10 +59,12 @@ nav {
     grid-template-rows: 1fr 2fr 2fr 1fr;
     flex: 1;
     min-height: 0;
+    overflow-y: auto;
+    align-items: center;
 }
 
 .mainLogo {
-    color: rgb(201, 0, 0);
+    color: var(--bubba-red);
     font-size: 4rem;
     grid-row: 1;
     grid-column: 1 / 3;
@@ -83,7 +96,7 @@ nav {
     gap: 1rem;
     font-size: 2rem;
     text-align: center;
-    border: 7px solid rgb(201, 0, 0);
+    border: 7px solid var(--bubba-red);
     padding: 2rem;
     border-radius: 20px;
 }
@@ -94,7 +107,8 @@ nav {
 
 .blackBubba {
     color: black;
-    font-size: 3rem;;
+    font-size: 3rem;
+    ;
 }
 
 .reviews {
@@ -128,16 +142,16 @@ nav {
 
 }
 
-.fryContainer > div {
-    background-color: rgb(201, 0, 0);
+.fryContainer>div {
+    background-color: var(--bubba-red);
     padding: 1.3rem;
     border: 3px solid black;
     border-radius: 30px;
     letter-spacing: .5px;
 }
 
-.fryContainer > div:hover {
-    color:white;
+.fryContainer>div:hover {
+    color: white;
 }
 
 .fryImage {
@@ -152,20 +166,66 @@ nav {
     animation-name: blinking;
     animation-duration: 1s;
     animation-iteration-count: 100;
-  }
-  @keyframes blinking {
-    50% {
-      border-color: rgb(201, 0, 0);
-    }
-  }
+}
 
-  .blinking-text {
+@keyframes blinking {
+    50% {
+        border-color: var(--bubba-red);
+    }
+}
+
+.blinking-text {
     animation-name: blinking-text;
     animation-duration: 2s;
     animation-iteration-count: 100;
-  }
-  @keyframes blinking-text {
+}
+
+@keyframes blinking-text {
     40% {
-      color: rgb(201, 0, 0);
+        color: var(--bubba-red);
     }
-  }
+}
+
+.menuContainer, .contactContainer {
+    display: grid;;
+    /* gap: 1rem; */
+    margin: 2rem auto;
+    grid-column: 1 / 3;
+    grid-row: 1 / 5;
+    border: 8px solid var(--bubba-red);
+    border-radius: 20px;
+    width: 80%;
+    height: 90%;
+    place-items: center;
+    padding: 1rem;
+}
+
+.menuItem, .contactItem{
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 80%;
+    place-items: center;
+}
+
+.itemHeader, .contactType {
+    font-size: 2rem;
+    color: var(--bubba-red);
+}
+
+.itemText, .contactValue {
+text-align: center;
+}
+
+.itemPrice, #item5  {
+    color: var(--bubba-red)
+}
+
+.contactItem {
+    /* grid-template-rows: min-content; */
+}
+
+.contactContainer{
+    height: 60%;
+    width: 40%;
+}
+
