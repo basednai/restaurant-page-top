@@ -220,10 +220,6 @@ text-align: center;
     color: var(--bubba-red)
 }
 
-.contactItem {
-    /* grid-template-rows: min-content; */
-}
-
 .contactContainer{
     height: 60%;
     width: 40%;
